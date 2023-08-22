@@ -1,0 +1,11 @@
+{
+    "autoload": {
+        "psr-4": {
+            "BLOG\\": "app/"
+        }
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.8",
+        "intervention/image": "^2.7"
+    }
+}
