@@ -10,31 +10,46 @@ include_once(PARTIALS.'nav.php');
     <!--====================== END OF NAV ====================-->
 
     <section class="featured">
-        <div class="container featured__container">
+    <div class="container featured__container">
+        <?php if (!empty($latestPost)): ?>
             <div class="post__thumbnail">
-                <img src="./images/blog1.jpg">
+                <img src="<?php echo PHOTO . $latestPost['post_img']; ?>" alt="Post Image">
             </div>
        
             <div class="post__info">
-                <a href="home/details" class="category__button"></a>
-                <h2 class="post__title"><a href="home/details">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid!</a></h2>
+                <a href="#" class="category__button">
+                    <?php echo htmlspecialchars($latestPost['username']); ?>
+                </a>
+                <h2 class="post__title">
+                    <a href="<?php echo LINK ?>Post/read_post/?posts_id=<?php echo $latestPost['posts_id']; ?>">
+                        <?php echo htmlspecialchars($latestPost['title']); ?>
+                    </a>
+                </h2>
                 <p class="post__body">
-                    <?php echo $_SESSION['username'];?>
+                    <?php
+                    $body = $latestPost['body'];
+                    $maxLength = 200;
+                    echo (strlen($body) > $maxLength) ? substr($body, 0, $maxLength) . '... <a href="' . LINK . 'Post/read_post/?posts_id=' . $latestPost['posts_id'] . '">Read More</a>' : $body;
+                    ?>
                 </p>
                 <div class="post__author">
                     <div class="post__author-avatar">
-                        <img src="./images/avatar2.jpg">
+                        <img src="<?php echo PHOTO . $latestPost['profile']; ?>" alt="Author Avatar">
                     </div>
                     <div class="post__author-info">
-                        <h5>By: 
-                            <?php echo $_SESSION['username']; ?></h5>
-                        <small>June 10, 2022 - 07:23</small>
+                        <h5>By: <?php echo htmlspecialchars($latestPost['username']); ?></h5>
+                        <small><?php echo $latestPost['created_at']; ?></small>
                     </div>
                 </div>
             </div>
+        <?php else: ?>
+            <div class="no-posts">
+                <h2>No posts available at the moment.</h2>
+            </div>
+        <?php endif; ?>
+    </div>
+</section>
 
-        </div>
-    </section>
     <!--====================== END OF FEATURED ====================-->
     <section class="posts">
     <div class="container posts__container">
@@ -66,7 +81,7 @@ include_once(PARTIALS.'nav.php');
                 </p>
                 <div class="post__author">
                     <div class="post__author-avatar">
-                        <img src="<?php echo  PHOTO. $post['post_img']; ?> ?>">
+                        <img src="<?php echo  PHOTO. $post['profile']; ?> ?>">
                     </div>
                     <div class="post__author-info">
                         <h5>By: <?php echo $post['username']; ?></h5>

@@ -1,4 +1,3 @@
-
 <footer>
         <div class="footer__socials">
             <a href="#" target="_blank"><i class="uil uil-youtube"></i></a>
@@ -11,24 +10,15 @@
             <article>
                 <h4>Categories</h4>
                 <ul>
-                    <li><a href="">Art</a></li>
-                    <li><a href="">Wild Life</a></li>
-                    <li><a href="">Travel</a></li>
-                    <li><a href="">Music</a></li>
-                    <li><a href="">Science & Technology</a></li>
-                    <li><a href="">Food</a></li>
+                    <li><a href="">Technology</a></li>
+                    <li><a href="">Health</a></li>
+                    <li><a href="">Lifestyle</a></li>
+                    <li><a href="">Finance</a></li>
+                    <li><a href="">Entertainment</a></li>
+                    <li><a href="">AI</a></li>
                 </ul>
             </article>
-            <article>
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="">Online Support</a></li>
-                    <li><a href="">Call Numbers</a></li>
-                    <li><a href="">Emails</a></li>
-                    <li><a href="">Social Support</a></li>
-                    <li><a href="">Location</a></li>
-                </ul>
-            </article>
+         
             <article>
                 <h4>Blog</h4>
                 <ul>
@@ -51,9 +41,12 @@
             </article>
         </div>
         <div class="footer__copyright">
-            <small>Copyright &copy;cipher</small>
+            <div class="footer__logo">
+                <img src="<?php echo LINK ?>images/logo.png" alt="Logo">
+            </div>
+            <small>Copyright &copy;Blogify</small>
         </div>
-    </footer>
+</footer>
 
 
     <script src="<?php echo LINK  ?>main.js"></script>

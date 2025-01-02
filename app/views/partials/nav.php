@@ -1,6 +1,12 @@
 <nav>
     <div class="container nav__container">
-        <a href="<?php echo LINK ?>home/index" class="nav__logo">Cipher</a>
+        <a href="<?php echo LINK; ?>home" style="text-decoration: none;">
+            <div class="nav__logo" style="display: flex; align-items: center; color: white;">
+                <img src="<?php echo LINK; ?>front/images/logo.png" alt="Logo" style="margin-right: 10px; width: 50px; height: auto;">
+                Blogify
+            </div>
+        </a>
+
         <ul class="nav__items">
             
             <?php if(empty($_SESSION['username'])): ?>
@@ -11,15 +17,14 @@
                 <li><a href="<?php echo LINK ?>contact/contact">Contact</a></li>
                 <li><a href="<?php echo LINK ?>about/about">About</a></li>
             <?php endif; ?>
-            <?php if(!empty($_SESSION['username'])): ?>
+            <?php if(!empty($_SESSION['username'])): ?> 
                 <li class="nav__profile">
                     <div class="avatar">
-                        <img src="<?php echo  PHOTO. $profile_photo['profile']; ?>">
-                        <?php echo  PHOTO. $profile_photo['username'];?>
+                        <img src="<?php echo PHOTO . ($_SESSION['profile'] ); ?>" alt="Profile Photo">
                     </div>
                     <ul>
-                        <li><a href="<?php echo LINK ?>Admin/dashboard">Dashboard</a></li>
-                        <li><a href="<?php echo LINK ?>User_Login/logout">Logout</a></li>
+                        <li><a href="<?php echo LINK ?>Admin/dashboard"><i class="uil uil-dashboard"></i>Dashboard</a></li>
+                        <li><a href="<?php echo LINK ?>User_Login/logout"><i class="uil uil-signout"></i>Logout</a></li>
                     </ul>
                 </li>
             <?php endif; ?>

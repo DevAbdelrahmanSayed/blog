@@ -121,16 +121,27 @@ nav button {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    overflow: visible;
 }
 
 .avatar {
     width: 2.5rem;
     height: 2.5rem;
-    border-radius: 50%;
+    border-radius: 50%; /* Ensures a circular shape */
     overflow: hidden;
     border: 0.3rem solid var(--color-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+    object-position: center; /* Centers the image inside the container */
+}
 .nav__logo {
     font-weight: 600;
     font-size: 1.2rem;
@@ -153,28 +164,59 @@ nav button {
     right: 0;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.4);
+    background: var(--color-gray-900);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     visibility: hidden;
     opacity: 0;
-    transition: var(--transition);
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    width: 220px;
+    backdrop-filter: blur(10px);
 }
 
-/* show nav ul when nav profile is hovered */
 .nav__profile:hover > ul {
     visibility: visible;
     opacity: 1;
+    transform: translateY(0);
+}
+
+.nav__profile ul li {
+    position: relative;
+}
+
+.nav__profile ul li:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav__profile ul li a {
-    padding: 1rem;
-    background: var(--color-gray-900);
-    display: block;
-    width: 100%;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
+    color: var(--color-white);
+    transition: all 0.3s ease;
+}
+
+.nav__profile ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    padding-left: 2rem;
+}
+
+.nav__profile ul li:first-child a {
+    border-radius: 10px 10px 0 0;
 }
 
 .nav__profile ul li:last-child a {
+    border-radius: 0 0 10px 10px;
     background: var(--color-red);
-    color: var(--color-bg);
+    color: var(--color-white);
+}
+
+.nav__profile ul li:last-child a:hover {
+    background: #ff1f1f;
 }
 
 /* ============================================================================== CATEGORY BUTTON ================================================================================== */
@@ -216,8 +258,19 @@ nav button {
 .post__author-avatar {
     width: 2.5rem;
     height: 2.5rem;
-    border-radius: var(--card-border-radius-3);
+    border-radius: 50%; /* Ensures a circular shape */
     overflow: hidden;
+    border: 0.3rem solid var(--color-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post__author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+    object-position: center; /* Centers the image inside the container */
 }
 
 /* ============================================================================== FEATURED ================================================================================== */
@@ -232,7 +285,8 @@ nav button {
 }
 
 .featured .post__thumbnail {
-    height: fit-content;
+   height: 400px;
+   width: 600px;
 }
 
 /* ============================================================================== POSTS ================================================================================== */
@@ -262,6 +316,7 @@ footer {
     background: var(--color-gray-900);
     padding: 5rem 0 0;
     box-shadow: inset 0 1.5rem 1.5rem rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center all text content */
 }
 
 .footer__socials {
@@ -269,7 +324,7 @@ footer {
     width: fit-content;
     margin-bottom: 5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center social icons horizontally */
     align-items: center;
     gap: 1.2rem;
 }
@@ -291,7 +346,11 @@ footer {
 
 .footer__container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center; /* Center the grid horizontally */
+    gap: 2rem; /* Add spacing between columns */
+    margin-inline: auto; /* Center the grid container */
+    max-width: 800px; /* Optional: limit max width */
 }
 
 footer h4 {
@@ -318,6 +377,7 @@ footer ul a:hover {
     border-top: 2px solid var(--color-bg);
     margin-top: 4rem;
 }
+
 
 /* ============================================================================== SEARCH ================================================================================== */
 .search__bar {
@@ -656,6 +716,7 @@ input, textarea, select {
 
     .nav__profile {
         background: var(--color-gray-900);
+       
     }
 
     .nav__profile ul {
@@ -666,6 +727,7 @@ input, textarea, select {
     .nav__profile .avatar {
         margin-left: 2rem;
         border: 0;
+        
     }
 
     .featured__container {
@@ -680,7 +742,7 @@ input, textarea, select {
     .footer__container {
         grid-template-columns: 1fr 1fr;
         gap: 3rem;
-    }
+        }
 
 
     /* ============= BLOG =========== */

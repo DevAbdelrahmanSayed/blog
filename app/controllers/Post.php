@@ -84,7 +84,7 @@ class Post extends Controller
     
             if (empty($errors)) {
                 // File upload handling
-                $target_dir = 'C:/laragon/www/blog/public/front/images/';
+                $target_dir = IMAGE_UPLOAD_DIR;
                 $filename = '';
                 $extension = '';
             
@@ -150,7 +150,7 @@ class Post extends Controller
                 'posts_id' => $delete
             ];
             $select_id = $delete_id->id_photo($params);
-            $file_path = "C:/laragon/www/blog/public/front/images/" . $select_id['post_img'];
+            $file_path = IMAGE_UPLOAD_DIR . $select_id['post_img'];
 
             if (file_exists($file_path)) {
                 unlink($file_path);

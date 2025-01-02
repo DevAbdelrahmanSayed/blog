@@ -8,9 +8,6 @@ include_once(PARTIALS.'nav.php');
 ?>
     <!--====================== END OF NAV ====================-->
 
-
-
-
     <section class="search__bar">
         <form class="container search__bar-container" action="">
             <div>
@@ -51,7 +48,7 @@ include_once(PARTIALS.'nav.php');
                 </p>
                 <div class="post__author">
                     <div class="post__author-avatar">
-                        <img src="<?php echo $post['post_img']; ?>">
+                        <img src="<?php echo PHOTO . $post['post_img']; ?>">
                     </div>
                     <div class="post__author-info">
                         <h5>By: <?php echo $post['username']; ?></h5>

@@ -18,8 +18,9 @@ define("PASSWORD","");
 define("CHARSET","utf8");
 define("DB_NAME","blog");
 define("DATABASE_TYPE","mysql");
-define("DOMAIN_NAME","http://localhost/blog/public/");
-define("PHOTO","http://localhost/blog/public/front/images/");
+define("DOMAIN_NAME","http://localhost/blog/");
+define("PHOTO","http://localhost/blog/front/images/");
+define("IMAGE_UPLOAD_DIR", ROOT . 'public' . DS . 'front' . DS . 'images' . DS);
 define("LINK",DOMAIN_NAME);
 
 

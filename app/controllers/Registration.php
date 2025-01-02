@@ -49,7 +49,7 @@ class Registration extends Controller
             $valid->validateFileFormat($profile, $errors, ['image/jpeg', 'image/png'], 'Invalid file format. Only JPG and PNG files are allowed');
  
             if (empty($errors)) {
-                $target_dir = 'C:/laragon/www/blog/public/front/images/';
+                $target_dir = IMAGE_UPLOAD_DIR;
                 $filename = pathinfo($_FILES['profile']['name'], PATHINFO_FILENAME);
                 $extension = pathinfo($_FILES['profile']['name'], PATHINFO_EXTENSION);
                 $target_file = $target_dir . $filename . '.' . $extension;

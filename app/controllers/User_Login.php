@@ -36,6 +36,7 @@ class User_Login extends Controller
                 session_start();
                 $_SESSION['username'] = $userData['username'];
                 $_SESSION['user_id'] = $userData['user_id'];
+                $_SESSION['profile'] = $userData['profile'] ?? 'default.png';
 
                 // Redirect to the home page or any other protected page
                 header('Location: ' . LINK . 'Home');

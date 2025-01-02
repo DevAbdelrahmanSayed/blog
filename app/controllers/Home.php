@@ -11,18 +11,20 @@ class Home extends Controller
         if (!empty($_SESSION['username'])) {
             $user_post = new User();
         $posts = $user_post->all_posts();
+        $latestPost = $user_post->getLatestPost();
      // User is logged in, show the index page
             $categories = $user_post->all_cat();
-            $this->view('home', ['title' => 'Home','posts' => $posts,'categories'=>$categories]);
+            $this->view('home', ['title' => 'Home','posts' => $posts,'categories'=>$categories,'latestPost'=>$latestPost]);
         } else {
             // User is not logged in, redirect to the login page
             header('Location: ' . LINK . 'User_Login/login');
             exit;
         }
-        
-        
       
     }
+
+
+
     public function get_photo()
     {
         session_start();

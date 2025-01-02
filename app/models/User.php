@@ -29,13 +29,25 @@ class User extends Model
         $query = 'INSERT INTO posts (title, category, body, post_img,user_id,username) VALUES (:title, :category, :body, :post_img, :user_id,:username)';
         return $this->data($query, $params);
     }
+    public function getLatestPost()
+    {
+        $query = 'SELECT posts.*, users.username, users.profile 
+                FROM posts 
+                JOIN users ON posts.user_id = users.user_id 
+                ORDER BY posts.created_at DESC 
+                LIMIT 1';
+        return $this->select_one($query);
+    }
+
     public function all_posts()
     {
-        $query = 'SELECT * FROM posts';
+        $query = 'SELECT posts.*, users.username, users.profile 
+                  FROM posts 
+                  JOIN users ON posts.user_id = users.user_id 
+                  ORDER BY posts.created_at DESC';
         return $this->select_all($query);
     }
    
-  
     public function all_user($params)
     {
         $query = 'SELECT * FROM users';
