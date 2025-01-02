@@ -83,6 +83,3 @@ blog/
 
 ## Contributing
 Feel free to submit issues and pull requests
-
-## License
-[Your License Here]
