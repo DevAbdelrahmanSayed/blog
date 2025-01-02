@@ -3,14 +3,11 @@ include_once(PARTIALS.'header.php');
 
 ?>
 
-
 <body>
 <?php
 include_once(PARTIALS.'nav.php');
 ?>
     <!--====================== END OF NAV ====================-->
-
-
 
     <section class="featured">
         <div class="container featured__container">
@@ -86,7 +83,6 @@ include_once(PARTIALS.'nav.php');
     <!--====================== END OF POSTS ====================-->
     
 <section class="category__buttons">
-
         <div class="container category__buttons-container">
         <?php foreach($categories AS $categ): ?>
             <a href="<?php echo LINK ?>Home/Categories/?cat_id=<?php echo $categ['cat_id']; ?>" class="category__button"><?php echo $categ['name']; ?></a>

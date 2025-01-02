@@ -1,6 +1,6 @@
 <nav>
     <div class="container nav__container">
-        <a href="<?php echo LINK ?>home/index" class="nav__logo">EGATOR</a>
+        <a href="<?php echo LINK ?>home/index" class="nav__logo">Cipher</a>
         <ul class="nav__items">
             
             <?php if(empty($_SESSION['username'])): ?>

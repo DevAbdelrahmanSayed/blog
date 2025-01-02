@@ -39,7 +39,7 @@ class SendVerificationEmail extends Controller
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
             $mail->Username   = 'devabdelr2hman@gmail.com';
-            $mail->Password   = 'ukabqlctckmwwnqv';
+            $mail->Password   = 'azaezwuthvvhlxuf';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port       = 465;
 

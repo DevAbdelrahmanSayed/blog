@@ -43,9 +43,7 @@ class Registration extends Controller
             if ($password !== $confirmPassword) {
                 $errors['confirm_password'] = 'Password and Confirm Password do not match';
             } else {
-                $valid->validatePasswordLength($password, $errors, 8, 20);
-                $valid->validatePasswordFormat($password, $errors, 'Password should include at least one uppercase letter, one lowercase letter, one number, and one special character.');
-                $valid->checkCommonPasswords($password, $errors, ['password', '123456', 'qwerty'], 'Password is commonly used and not secure.');
+                    $valid->checkCommonPasswords($password, $errors, ['password', '123456', 'qwerty'], 'Password is commonly used and not secure.');
             }
 
             $valid->validateFileFormat($profile, $errors, ['image/jpeg', 'image/png'], 'Invalid file format. Only JPG and PNG files are allowed');

@@ -1,11 +1,11 @@
 
 <footer>
         <div class="footer__socials">
-            <a href="https://youtube.com/egatortutorials" target="_blank"><i class="uil uil-youtube"></i></a>
-            <a href="https://facebook.com" target="_blank"><i class="uil uil-facebook-f"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="uil uil-instagram-alt"></i></a>
-            <a href="https://linkedin.com" target="_blank"><i class="uil uil-linkedin"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="uil uil-twitter"></i></a>
+            <a href="#" target="_blank"><i class="uil uil-youtube"></i></a>
+            <a href="#" target="_blank"><i class="uil uil-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="uil uil-instagram-alt"></i></a>
+            <a href="#" target="_blank"><i class="uil uil-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="uil uil-twitter"></i></a>
         </div>
         <div class="container footer__container">
             <article>
@@ -51,7 +51,7 @@
             </article>
         </div>
         <div class="footer__copyright">
-            <small>Copyright &copy; 2022 EGATOR TUTORIALS</small>
+            <small>Copyright &copy;cipher</small>
         </div>
     </footer>
 
